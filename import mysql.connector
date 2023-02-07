@@ -1,0 +1,56 @@
+import psycopg2
+conn = psycopg2.connect(database="postgres",
+    host="127.0.0.1",
+    port="5432",
+    user="postgres",
+    password="18312100"
+                        )
+conn.autocommit = True
+
+
+class data():
+    def update_check(self):
+        cursor = conn.cursor()  # update check
+        cursor.execute('''update ... check=   where id =''')
+        conn.commit()
+        print("Records inserted........")
+        conn.close()
+
+    def insert(self):
+        cursor = conn.cursor()  # insert value
+        
+        cursor.execute('''INSERT INTO  (id.text,favorite,check)  values()''')
+        conn.commit()
+        print("Records inserted........")
+        conn.close()
+
+    def select(self):
+        cursor = conn.cursor()  # select value
+        cursor.execute('''select * in ''')
+        result = cursor.fetchall()
+        print(result)
+        conn.commit()
+        print("Records inserted........")
+        conn.close()
+
+    def favorite(self):
+        cursor = conn.cursor()  # select favorite
+        cursor.execute('''select * FROM  where favorite = true''')
+        print(cursor.fetchall())
+        conn.commit()
+        print("Records inserted........")
+        conn.close()
+
+    def update_favorite(self):
+        cursor = conn.cursor()  # update favorite
+        cursor.execute('''update favorite=   where id =''')
+        conn.commit()
+        print("Records inserted........")
+        conn.close()
+
+    def delete(self):
+        cursor = conn.cursor()  # delete value
+        cursor.execute('''DElETE FROM  where''')
+        conn.commit()
+        print("Records inserted........")
+        conn.close()
